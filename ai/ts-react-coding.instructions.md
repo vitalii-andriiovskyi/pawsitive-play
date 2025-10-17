@@ -22,4 +22,4 @@ Apply the [general coding guidelines](./general-coding.instructions.md) to all c
 - Use the Next.js [<Image /> component](https://nextjs.org/docs/app/api-reference/components/image) for optimized images.
 - If React Component has a property containing complex data, destructure it to create new variables at the beginning of the component body and use those variables in the JSX later. Add default values for them if needed.
 - Add `className` to the component properties. Apply this `className` property to the root element of the component.
-- Use CSS Modules for component styling.
+- Use Tailwind CSS for component styling.
