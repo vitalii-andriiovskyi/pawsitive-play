@@ -9,14 +9,13 @@ import { Dropdown } from "primereact/dropdown";
 import { RadioButton } from "primereact/radiobutton";
 import { Checkbox } from "primereact/checkbox";
 import { InputSwitch } from "primereact/inputswitch";
-import { Button as PRButton } from "primereact/button";
 
-import { COUNTRIES } from "@/shared/features/country/domain/countries";
+import { COUNTRIES } from "@/shared/constants/countries";
 import FormControlWrapper from "@/front-end/components/shared/form-control-wrapper/FormControlWrapper";
 import { Button } from "@/front-end/components/shared/button/Button";
 import Spinner from "@/front-end/components/shared/spinner/Spinner";
 import delay from "@/shared/utils/delay";
-import { Image } from "@/shared/features/image/domain/image.model";
+import { Image } from "@/shared/models/image";
 import ImageUploader from "@/front-end/components/shared/form/image-uploader/ImageUploader";
 import DebouncedInputText from "@/front-end/components/shared/form/debounced-input-text/DebouncedInputText";
 import DebouncedPassword from "@/front-end/components/shared/form/debounced-password/DebouncedPassword";
@@ -24,9 +23,6 @@ import DebouncedInputMask from "@/front-end/components/shared/form/debounced-inp
 import DebouncedInputTextarea from "@/front-end/components/shared/form/debounced-input-textarea/DebouncedInputTextarea";
 import DebouncedSlider from "@/front-end/components/shared/form/debounced-slider/DebouncedSlider";
 import DebouncedInputNumber from "@/front-end/components/shared/form/debounced-input-number/DebouncedInputNumber";
-import { getDefaultImage } from "@/front-end/components/shared/form/image-uploader/data";
-import RemoveItem from "@/front-end/components/shared/remove-item/RemoveItem";
-import { addItem } from "@/front-end/utils/collection";
 
 const pets = [
   { name: "Dog", value: "dog" },
@@ -45,7 +41,6 @@ interface FormValues {
   dateOfBirth: Date | null;
   country: string;
   photo: Image;
-  images: Image[];
   range: [number, number];
   pet: string; // radio
   acceptTerms: boolean;
@@ -71,7 +66,6 @@ const GenericForm = () => {
       height: 0,
       alt: "",
     },
-    images: [getDefaultImage()],
     range: [20, 50],
     pet: "",
     acceptTerms: false,
@@ -106,14 +100,6 @@ const GenericForm = () => {
     })
       .nullable()
       .required("Photo is required"),
-    images: array()
-      .of(
-        object({
-          src: string().required("Image src is required"),
-          alt: string().required("Image alt is required"),
-        }),
-      )
-      .required(),
     range: array()
       .of(number().min(0).max(100).required("Range value is required"))
       .length(2, "Range must be an array of two numbers [min, max]")
@@ -346,67 +332,6 @@ const GenericForm = () => {
               errors={errors?.photo}
               key="photo-uploader"
             />
-
-            <div>
-              <h4>Images</h4>
-              <div className="grid gap-3">
-                {values.images?.map((img, i) => (
-                  <div key={`images-uploader-wrapper-images[${img.id}]`}>
-                    {values.images.length > 1 && (
-                      <div className="-mb-[44px] flex justify-end">
-                        <RemoveItem>
-                          {({ confirmRemove }) => (
-                            <PRButton
-                              type="button"
-                              severity="danger"
-                              icon="pi pi-trash"
-                              rounded
-                              tooltip="Remove Image"
-                              tooltipOptions={{
-                                position: "left",
-                              }}
-                              onClick={confirmRemove(
-                                values.images,
-                                img.id,
-                                "images",
-                                setFieldValue,
-                              )}
-                              className="translate-x-[45%]"
-                            />
-                          )}
-                        </RemoveItem>
-                      </div>
-                    )}
-                    <ImageUploader
-                      className="w-full"
-                      setFieldValue={setFieldValue}
-                      setFieldTouched={setFieldTouched}
-                      nameStart={`images[${i}]`}
-                      values={img}
-                      touched={touched?.images?.[i] as Record<string, boolean>}
-                      errors={errors?.images?.[i] as Record<string, string>}
-                    />
-                  </div>
-                ))}
-                <div className="flex justify-end">
-                  <Button
-                    type="button"
-                    variant="regular"
-                    size="sm"
-                    onClick={() =>
-                      addItem(
-                        values.images || [],
-                        getDefaultImage(),
-                        "images",
-                        setFieldValue,
-                      )
-                    }
-                  >
-                    Add Image
-                  </Button>
-                </div>
-              </div>
-            </div>
 
             <FormControlWrapper
               label="Range"
