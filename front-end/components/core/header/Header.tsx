@@ -17,17 +17,17 @@ export default function Header() {
             <li>
               <Link
                 className="font-primary text-lg md:text-2xl"
-                href="/ai-houses"
+                href="/generic-form-example"
               >
-                AI Houses
+                Generic Form Example
               </Link>
             </li>
             <li>
               <Link
                 className="font-primary text-lg md:text-2xl"
-                href="/generic-form-example"
+                href="/service-form"
               >
-                Generic Form Example
+                Service Form
               </Link>
             </li>
           </ul>
