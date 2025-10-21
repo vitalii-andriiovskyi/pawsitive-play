@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { signIn, auth, signOut } from "@/auth";
-import UserRepository from "@/back-end/features/users/user.repository";
-import UserService from "@/back-end/features/users/user.service";
+import UserRepository from "@/back-end/features/user/user.repository";
+import UserService from "@/back-end/features/user/user.service";
 import SignUpSchema from "@/shared/features/user/validation-schemas/user.signup.schema";
 
 export async function GET(request: NextRequest) {

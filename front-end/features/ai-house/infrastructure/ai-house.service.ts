@@ -1,5 +1,5 @@
-import * as api from '@/front-end/features/ai-houses/infrastructure/ai-house.api';
-import type { AIHouse, AIHouseCreate, AIHouseUpdate } from '@/front-end/features/ai-houses/domain/ai-house.model';
+import * as api from '@/front-end/features/ai-house/infrastructure/ai-house.api';
+import type { AIHouse, AIHouseCreate, AIHouseUpdate } from '@/front-end/features/ai-house/domain/ai-house.model';
 
 export const fetchAIHouses = async (): Promise<AIHouse[]> => {
   return api.getAIHouses();

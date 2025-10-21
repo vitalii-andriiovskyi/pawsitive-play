@@ -1,9 +1,9 @@
 import useSWR from 'swr';
 import { useSession } from "next-auth/react"; // Import useSession
 
-import { fetchAIHouses, fetchAIHouseById, likeAIHouse, unlikeAIHouse } from '@/front-end/features/ai-houses/infrastructure/ai-house.service';
-import type { AIHouse } from '@/front-end/features/ai-houses/domain/ai-house.model';
-import { getAIHousesSWRKey, getAIHouseSWRKey } from '@/front-end/features/ai-houses/use-cases/ai-house.swr.keys';
+import { fetchAIHouses, fetchAIHouseById, likeAIHouse, unlikeAIHouse } from '@/front-end/features/ai-house/infrastructure/ai-house.service';
+import type { AIHouse } from '@/front-end/features/ai-house/domain/ai-house.model';
+import { getAIHousesSWRKey, getAIHouseSWRKey } from '@/front-end/features/ai-house/use-cases/ai-house.swr.keys';
 
 
 export function useAIHouses() {

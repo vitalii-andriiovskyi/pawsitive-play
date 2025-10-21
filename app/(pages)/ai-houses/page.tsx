@@ -1,14 +1,14 @@
 import { Metadata, ResolvingMetadata } from "next";
-import UserService from "@/back-end/features/users/user.service";
+import UserService from "@/back-end/features/user/user.service";
 import SWRProvider from "@/front-end/context/swr-provider";
 import { getUserSWRKey } from "@/front-end/features/user/use-cases/user.swr.keys";
 import Layout from "@/front-end/components/core/layout/Layout";
 import { getMetadata } from "@/shared/features/seo/domain/seo.repository";
 import { MetadataProps, SEO } from "@/shared/features/seo/domain/seo.model";
 import CONFIG from "@/config/config";
-import AIHouseRepository from "@/back-end/features/ai-houses/ai-house.repository";
-import AIHouses from "@/front-end/features/ai-houses/components/AIHouses";
-import { getAIHousesSWRKey } from "@/front-end/features/ai-houses/use-cases/ai-house.swr.keys";
+import AIHouseRepository from "@/back-end/features/ai-house/ai-house.repository";
+import AIHouses from "@/front-end/features/ai-house/components/AIHouses";
+import { getAIHousesSWRKey } from "@/front-end/features/ai-house/use-cases/ai-house.swr.keys";
 
 const getData = async () => {
   const [user, aiHouses] = await Promise.all([

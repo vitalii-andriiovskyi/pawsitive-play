@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
-import AIHouseService from "@/back-end/features/ai-houses/ai-house.service";
-import AIHouseRepository from "@/back-end/features/ai-houses/ai-house.repository";
+import AIHouseService from "@/back-end/features/ai-house/ai-house.service";
+import AIHouseRepository from "@/back-end/features/ai-house/ai-house.repository";
 import CustomError from "@/shared/features/error/domain/custom-error";
 import { AIHouseCreate } from "@/shared/features/ai-house/domain/ai-house.model";
 import AIHouseCreateSchema from "@/shared/features/ai-house/validation-schemas/ai-house.create.schema";

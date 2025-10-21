@@ -19,7 +19,7 @@ import { AIHouseCreate } from "@/shared/features/ai-house/domain/ai-house.model"
 import { getCountry } from "@/shared/features/country/domain/country.repository";
 import DebouncedInputNumber from "@/front-end/components/shared/form/debounced-input-number/DebouncedInputNumber";
 import { getDefaultImage } from "@/front-end/components/shared/form/image-uploader/data";
-import { createAIHouse } from "@/front-end/features/ai-houses/infrastructure/ai-house.service";
+import { createAIHouse } from "@/front-end/features/ai-house/infrastructure/ai-house.service";
 import { useUser } from "@/front-end/features/user/use-cases/user.usecases";
 import RemoveItem from "@/front-end/components/shared/remove-item/RemoveItem";
 import { addItem } from "@/front-end/utils/collection";
