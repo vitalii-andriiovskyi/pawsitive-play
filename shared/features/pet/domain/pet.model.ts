@@ -3,16 +3,16 @@ import { SEO } from "@/shared/features/seo/domain/seo.model";
 
 export interface Pet {
   _id: string;
-  species: string;
-  breed: string;
+  species: string; // dog, cat, rabbit, etc.
+  breed: string; // Labrador, Siamese, etc.
   videos: string[];
   images: Image[];
-  url: string;
-  name: string;
-  content: string;
-  previewImage: Image;
+  url: string; // Unique URL slug for the pet profile
+  name: string; // Name of the pet
+  content: string; // Description or story about the pet
+  previewImage: Image; // Main image for previews
   abilities: string[];  // "Catch", "Pull Wagon", "Purring", etc.
-  age: number;
+  age: number; // Age in years
   createdAt: string;
   updatedAt: string;
   seo: SEO;
