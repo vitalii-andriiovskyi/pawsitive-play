@@ -15,11 +15,10 @@ export interface Pet {
   age: number;
   createdAt: string;
   updatedAt: string;
-  likes: number;
   seo: SEO;
 }
 
-export type PetBasic = Pick<Pet, '_id' | 'name' | 'species' | 'breed' | 'age' | 'previewImage' | 'images' | 'likes' | 'abilities'>;
+export type PetBasic = Pick<Pet, '_id' | 'name' | 'species' | 'breed' | 'age' | 'previewImage' | 'images' | 'abilities'>;
 
 export type PetCreate = Omit<Pet, '_id' | 'createdAt' | 'updatedAt' | 'likes'>;
 export type PetUpdate = Omit<Pet, 'createdAt' | 'updatedAt' | 'likes'>;
