@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
-import AIHouseService from "@/back-end/features/ai-houses/ai-house.service";
-import AIHouseRepository from "@/back-end/features/ai-houses/ai-house.repository";
+import AIHouseService from "@/back-end/features/ai-house/ai-house.service";
+import AIHouseRepository from "@/back-end/features/ai-house/ai-house.repository";
 import CustomError from "@/shared/features/error/domain/custom-error";
 import AIHouseUpdateSchema from "@/shared/features/ai-house/validation-schemas/ai-house.update.schema";
 import { AI_HOUSE_UPDATE_INVALID_DATA_ERR } from "@/shared/features/error/domain/error.constants";

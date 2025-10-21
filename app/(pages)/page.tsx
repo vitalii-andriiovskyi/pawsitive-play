@@ -1,5 +1,5 @@
 import { Metadata, ResolvingMetadata } from "next";
-import UserService from "@/back-end/features/users/user.service";
+import UserService from "@/back-end/features/user/user.service";
 import { LeadingBlock } from "@/front-end/components/home/leading-block/LeadingBlock";
 import SWRProvider from "@/front-end/context/swr-provider";
 import { getUserSWRKey } from "@/front-end/features/user/use-cases/user.swr.keys";

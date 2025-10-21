@@ -1,5 +1,5 @@
 import { apiClient } from '@/shared/lib/api-client';
-import type { AIHouse, AIHouseCreate, AIHouseUpdate } from '@/front-end/features/ai-houses/domain/ai-house.model';
+import type { AIHouse, AIHouseCreate, AIHouseUpdate } from '@/front-end/features/ai-house/domain/ai-house.model';
 
 export const getAIHouses = () => apiClient.get<AIHouse[]>('/ai-houses');
 export const getAIHouseById = (id: string) => apiClient.get<AIHouse>(`/ai-houses/${id}`);

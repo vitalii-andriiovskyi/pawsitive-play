@@ -1,7 +1,7 @@
 import React from "react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
-import type { AIHouse } from "@/front-end/features/ai-houses/domain/ai-house.model";
+import type { AIHouse } from "@/front-end/features/ai-house/domain/ai-house.model";
 import { Button } from "primereact/button";
 
 interface Props {

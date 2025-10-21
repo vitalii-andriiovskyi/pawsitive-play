@@ -1,7 +1,7 @@
 import { Metadata, ResolvingMetadata } from "next";
 import { MetadataProps, SEO } from "@/shared/features/seo/domain/seo.model";
 
-import UserService from "@/back-end/features/users/user.service";
+import UserService from "@/back-end/features/user/user.service";
 import SWRProvider from "@/front-end/context/swr-provider";
 import { getUserSWRKey } from "@/front-end/features/user/use-cases/user.swr.keys";
 import Layout from "@/front-end/components/core/layout/Layout";

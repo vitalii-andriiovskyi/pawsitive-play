@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { useAIHouses } from "@/front-end/features/ai-houses/use-cases/ai-house.usecases";
-import AIHouseCard from "@/front-end/features/ai-houses/components/AIHouseCard";
+import { useAIHouses } from "@/front-end/features/ai-house/use-cases/ai-house.usecases";
+import AIHouseCard from "@/front-end/features/ai-house/components/AIHouseCard";
 
 const AIHouses: React.FC = () => {
   const { houses, isLoading, error, like, unlike } = useAIHouses();

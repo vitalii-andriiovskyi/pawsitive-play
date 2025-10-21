@@ -1,6 +1,6 @@
 import { AIHouse } from "@/shared/features/ai-house/domain/ai-house.model";
-import AIHouseRepository from "@/back-end/features/ai-houses/ai-house.repository";
-import UserService from "@/back-end/features/users/user.service";
+import AIHouseRepository from "@/back-end/features/ai-house/ai-house.repository";
+import UserService from "@/back-end/features/user/user.service";
 import CustomError from "@/shared/features/error/domain/custom-error";
 
 class AIHouseService {

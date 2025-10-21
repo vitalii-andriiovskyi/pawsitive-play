@@ -1,5 +1,5 @@
 import { Document, Types } from "mongoose";
-import Model from "@/back-end/features/ai-houses/ai-house.model";
+import Model from "@/back-end/features/ai-house/ai-house.model";
 import { AIHouse } from "@/shared/features/ai-house/domain/ai-house.model";
 import convertObjectIds from "@/back-end/utils/convertObjectIds";
 
