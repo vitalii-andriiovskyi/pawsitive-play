@@ -1,7 +1,6 @@
 import { Document, Types } from "mongoose";
 import Model from "@/back-end/features/ai-house/ai-house.model";
 import { AIHouse } from "@/shared/features/ai-house/domain/ai-house.model";
-import convertObjectIds from "@/back-end/utils/convertObjectIds";
 
 // Type for Mongoose Document
 export type AIHouseDocument = AIHouse & Document;
@@ -30,8 +29,7 @@ class AIHouseRepository {
   }
 
   static async getAll(): Promise<AIHouse[]> {
-    const entries = await Model.find().lean<AIHouse[]>();
-    return convertObjectIds(entries);
+    return Model.find().lean<AIHouse[]>();
   }
 
   static async updateOne(id: string, data: Partial<AIHouse>): Promise<AIHouseDocument | null> {

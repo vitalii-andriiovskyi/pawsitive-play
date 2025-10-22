@@ -2,6 +2,7 @@ import { AIHouse } from "@/shared/features/ai-house/domain/ai-house.model";
 import AIHouseRepository from "@/back-end/features/ai-house/ai-house.repository";
 import UserService from "@/back-end/features/user/user.service";
 import CustomError from "@/shared/features/error/domain/custom-error";
+import convertObjectIds from "@/back-end/utils/convertObjectIds";
 
 class AIHouseService {
   static async createHouse(data: Partial<AIHouse>) {
@@ -108,6 +109,11 @@ class AIHouseService {
     }
     await AIHouseRepository.delete(id);
     return;
+  }
+
+  static async getAllHouses(): Promise<AIHouse[]> {
+    const houses = await AIHouseRepository.getAll();
+    return convertObjectIds(houses);
   }
 }
 
