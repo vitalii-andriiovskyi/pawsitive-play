@@ -6,14 +6,14 @@ import Layout from "@/front-end/components/core/layout/Layout";
 import { getMetadata } from "@/shared/features/seo/domain/seo.repository";
 import { MetadataProps, SEO } from "@/shared/features/seo/domain/seo.model";
 import CONFIG from "@/config/config";
-import AIHouseRepository from "@/back-end/features/ai-house/ai-house.repository";
 import AIHouses from "@/front-end/features/ai-house/components/AIHouses";
 import { getAIHousesSWRKey } from "@/front-end/features/ai-house/use-cases/ai-house.swr.keys";
+import AIHouseService from "@/back-end/features/ai-house/ai-house.service";
 
 const getData = async () => {
   const [user, aiHouses] = await Promise.all([
     UserService.getSessionUser(),
-    AIHouseRepository.getAll(),
+    AIHouseService.getAllHouses(),
   ]);
   return {
     user,
