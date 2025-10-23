@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
 import AIHouseService from "@/back-end/features/ai-house/ai-house.service";
-import AIHouseRepository from "@/back-end/features/ai-house/ai-house.repository";
 import CustomError from "@/shared/features/error/domain/custom-error";
 import AIHouseUpdateSchema from "@/shared/features/ai-house/validation-schemas/ai-house.update.schema";
 import { AI_HOUSE_UPDATE_INVALID_DATA_ERR } from "@/shared/features/error/domain/error.constants";
@@ -9,7 +8,7 @@ import { AI_HOUSE_UPDATE_INVALID_DATA_ERR } from "@/shared/features/error/domain
 export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
-    const house = await AIHouseRepository.getById(id);
+    const house = await AIHouseService.getById(id);
     if (!house) {
       return NextResponse.json({ message: "House not found" }, { status: 404 });
     }

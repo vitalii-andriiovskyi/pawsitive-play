@@ -115,6 +115,14 @@ class AIHouseService {
     const houses = await AIHouseRepository.getAll();
     return convertObjectIds(houses);
   }
+
+  static async getById(id: string): Promise<AIHouse | null> {
+    const house = await AIHouseRepository.getById(id);
+    if (!house) {
+      return null;
+    }
+    return convertObjectIds(house);
+  }
 }
 
 export default AIHouseService;
