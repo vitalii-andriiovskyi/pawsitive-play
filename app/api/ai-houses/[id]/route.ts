@@ -5,6 +5,8 @@ import CustomError from "@/shared/features/error/domain/custom-error";
 import AIHouseUpdateSchema from "@/shared/features/ai-house/validation-schemas/ai-house.update.schema";
 import { AI_HOUSE_UPDATE_INVALID_DATA_ERR } from "@/shared/features/error/domain/error.constants";
 
+// /api/ai-houses/[id] or /api/ai-houses/:id 
+
 export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
