@@ -8,4 +8,4 @@ API endpoints:
 Service: #pet.service.ts
 Repository: #pet.repository.ts
 
-For the /api/pet HTTP POST method, /api/pet/[id] - HTTP methods PATCH, DELETE add logic to check if a user is admin user and decline the operation if not.
+For the /api/pet HTTP POST method, /api/pet/[id] - HTTP PATCH, DELETE methods add logic to check if a user is admin user and decline the operation if not.
