@@ -45,10 +45,8 @@ applyTo: "**/*.ts,**/*.tsx"
   │   │   │   │   │                       #  There could be folder `use-cases` instead of this file. 
   │   │   │   │   │                       #  It should contain specific use cases: `use-user`, `use-create-user` etc.
   │   │   │   ├── /components          # UI Components related to User
-  │   │   │   │   ├── /user-card
-  │   │   │   │   │   ├── UserCard.tsx
-  │   │   │   │   ├── /user-form
-  │   │   │   │   │   ├── UserForm.tsx
+  │   │   │   │   │   ├── UserCard.tsx      # UserCard component
+  │   │   │   │   │   ├── UserForm.tsx      # UserForm component
   │   │   │   ├── index.ts             # Barrel export for easy imports
   │   ├── /components                  # Generic, reusable UI components
   │   │   ├── /home                    # Homepage related components. They usually have content and don't deal with any domain logic
