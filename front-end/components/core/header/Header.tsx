@@ -30,6 +30,11 @@ export default function Header() {
                 Generic Form Example
               </Link>
             </li>
+            <li>
+              <Link className="font-primary text-lg md:text-2xl" href="/pets">
+                Pets
+              </Link>
+            </li>
           </ul>
         </nav>
         <RightPart />
