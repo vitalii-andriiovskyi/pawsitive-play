@@ -18,6 +18,14 @@ class PetService {
     return convertObjectIds(pet);
   }
 
+  static async getByUrl(url: string): Promise<Pet | null> {
+    const pet = await PetRepository.getByUrl(url);
+    if (!pet) {
+      return null;
+    }
+    return convertObjectIds(pet);
+  }
+
   static async createPet(data: Partial<Pet>): Promise<Pet> {
     const user = await UserService.getSessionUser();
     if (!user) {
