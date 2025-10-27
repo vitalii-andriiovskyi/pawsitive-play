@@ -5,12 +5,18 @@ import CustomError from "@/shared/features/error/domain/custom-error";
 import PetUpdateSchema from "@/shared/features/pet/validation-schemas/pet.update.schema";
 import { PET_UPDATE_INVALID_DATA_ERR } from "@/shared/features/error/domain/error.constants";
 
-// /api/pets/[id] or /api/pets/:id
+// /api/pets/[id] or /api/pets/:id?isURL=true
 
 export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
-    const pet = await PetService.getById(id);
+    const isURL = request.nextUrl.searchParams.get("isURL") === "true";
+    let pet = null;
+    if (isURL) {
+      pet = await PetService.getByUrl(id);
+    } else {
+      pet = await PetService.getById(id);
+    }
     if (!pet) {
       return NextResponse.json({ message: "Pet not found" }, { status: 404 });
     }
