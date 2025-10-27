@@ -6,6 +6,7 @@ const SEOSchema = new Schema<SEO>({
   title: { type: String, required: true },
   description: { type: String, required: true },
   image: { type: ImageSchema, required: true },
+  keywords: { type: [String], },
 }, { _id: false });
 
 export default SEOSchema;
