@@ -75,7 +75,7 @@ export async function generateMetadata(
 interface PageProps {
   params: Promise<{ pageURL: string }>;
 }
-export default async function Pet({ params }: PageProps) {
+export default async function PetPage({ params }: PageProps) {
   const { pageURL } = await params;
   const { swr } = await getData(pageURL);
   return (
