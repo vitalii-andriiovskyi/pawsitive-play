@@ -1,7 +1,7 @@
 import { getMetadata } from "@/shared/features/seo/domain/seo.repository";
 import Layout from "@/front-end/components/core/layout/Layout";
 import ErrorMain from "@/front-end/components/core/error-main/ErrorMain";
-import UserService from "@/back-end/features/users/user.service";
+import UserService from "@/back-end/features/user/user.service";
 import { getUserSWRKey } from "@/front-end/features/user/use-cases/user.swr.keys";
 import SWRProvider from "@/front-end/context/swr-provider";
 

@@ -4,6 +4,7 @@ export interface SEO {
   title: string;
   description: string;
   image: Image;
+  keywords?: string[];
 }
 
 export type MetadataProps = {

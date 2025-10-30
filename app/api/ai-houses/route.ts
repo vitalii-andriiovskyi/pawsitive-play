@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
-import AIHouseService from "@/back-end/features/ai-houses/ai-house.service";
-import AIHouseRepository from "@/back-end/features/ai-houses/ai-house.repository";
+import AIHouseService from "@/back-end/features/ai-house/ai-house.service";
 import CustomError from "@/shared/features/error/domain/custom-error";
 import { AIHouseCreate } from "@/shared/features/ai-house/domain/ai-house.model";
 import AIHouseCreateSchema from "@/shared/features/ai-house/validation-schemas/ai-house.create.schema";
@@ -9,7 +8,7 @@ import { AI_HOUSE_CREATE_INVALID_DATA_ERR } from "@/shared/features/error/domain
 
 export async function GET() {
   try {
-    const houses = await AIHouseRepository.getAll();
+    const houses = await AIHouseService.getAllHouses();
     return NextResponse.json(houses);
   } catch (error: any) {
     return NextResponse.json({ message: error.message || "Failed to fetch houses" }, { status: 500 });

@@ -3,7 +3,7 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 // import GitHub from "next-auth/providers/github";
 import { authConfig } from "./auth.config";
-import UserService from "./back-end/features/users/user.service";
+import UserService from "./back-end/features/user/user.service";
 
 // import { MongoDBAdapter } from "@auth/mongodb-adapter";
 // import clientPromise from "@/lib/db";

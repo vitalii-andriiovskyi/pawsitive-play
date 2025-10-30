@@ -1,13 +1,13 @@
 import { Metadata, ResolvingMetadata } from "next";
 import { MetadataProps, SEO } from "@/shared/features/seo/domain/seo.model";
 
-import UserService from "@/back-end/features/users/user.service";
+import UserService from "@/back-end/features/user/user.service";
 import SWRProvider from "@/front-end/context/swr-provider";
 import { getUserSWRKey } from "@/front-end/features/user/use-cases/user.swr.keys";
 import Layout from "@/front-end/components/core/layout/Layout";
 import { getMetadata } from "@/shared/features/seo/domain/seo.repository";
 import CONFIG from "@/config/config";
-import AIHouseForm from "@/front-end/features/ai-houses/components/AIHouseForm";
+import AIHouseForm from "@/front-end/features/ai-house/components/AIHouseForm";
 
 const getData = async () => {
   const user = await UserService.getSessionUser();

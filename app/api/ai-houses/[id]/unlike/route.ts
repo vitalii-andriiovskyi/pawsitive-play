@@ -2,7 +2,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import CustomError from "@/shared/features/error/domain/custom-error";
-import AIHouseService from "@/back-end/features/ai-houses/ai-house.service";
+import AIHouseService from "@/back-end/features/ai-house/ai-house.service";
 
 export async function POST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

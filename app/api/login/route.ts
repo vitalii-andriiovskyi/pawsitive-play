@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 
 import { signIn, auth } from "@/auth";
-import UserRepository from "@/back-end/features/users/user.repository";
+import UserRepository from "@/back-end/features/user/user.repository";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
