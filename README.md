@@ -1,6 +1,8 @@
 # Pawsitiwe-play
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This project is used for the course [Mastering Github Copilot: From Basics to Advanced Prompts](https://www.udemy.com/course/mastering-github-copilot-from-basics-to-advanced-standalone-prompts/?referralCode=82585E0428B85972D5D0) hosted on Udemy.
+
+All `standalone prompts` used in the course `are available` in the webpage [GitHub Copilot Standalone Prompts (/add-feature, /add-form, etc)](https://domovik.gumroad.com/l/github-copilot-standalone-prompts-add-form-etc) or in the course lessons.
 
 ## Tech Stack
 
