@@ -1,0 +1,11 @@
+export const HOUSE_NOT_FOUND = "House not found.";
+export const CANNOT_LIKE_OWN_HOUSE = "You cannot like your own house.";
+export const ALREADY_LIKED_HOUSE = "You have already liked this house.";
+export const FAILED_TO_FETCH_HOUSES = "Failed to fetch houses";
+export const FAILED_TO_CREATE_HOUSE = "Failed to create house";
+export const FAILED_TO_FETCH_HOUSE = "Failed to fetch house";
+export const FAILED_TO_UPDATE_HOUSE = "Failed to update house";
+export const FAILED_TO_DELETE_HOUSE = "Failed to delete house";
+export const HOUSE_DELETED_SUCCESSFULLY = "House deleted successfully";
+export const FAILED_TO_UNLIKE_HOUSE = "Failed to unlike house";
+export const FAILED_TO_LIKE_HOUSE = "Failed to like house";

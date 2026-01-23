@@ -5,8 +5,7 @@ import AIHouseCard from "@/front-end/features/ai-house/components/AIHouseCard";
 
 const AIHouses: React.FC = () => {
   const { houses, isLoading, error, like, unlike } = useAIHouses();
-
-  if (isLoading) return <div>Loading houses...</div>;
+  if (isLoading && !houses?.length) return <div>Loading houses...</div>;
   if (error) return <div>Error loading houses</div>;
   if (!houses || houses.length === 0) return <div>No houses found.</div>;
 

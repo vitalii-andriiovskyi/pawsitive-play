@@ -79,7 +79,7 @@ export async function generateMetadata(
   };
 }
 
-export default async function Home() {
+export default async function AIHousesPage() {
   const { swr } = await getData();
   return (
     <SWRProvider value={swr}>
