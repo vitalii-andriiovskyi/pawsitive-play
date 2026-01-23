@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
 
-import CustomError from "@/shared/features/error/domain/custom-error";
 import AIHouseService from "@/back-end/features/ai-house/ai-house.service";
+import sendErrorResponse from "@/back-end/utils/sendErrorResponse";
+import { FAILED_TO_UNLIKE_HOUSE } from "@/shared/features/ai-house/domain/ai-house.constants";
 
 export async function POST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -10,9 +11,6 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
     const house = await AIHouseService.unlikeHouse(id);
     return NextResponse.json(house);
   } catch (error: any) {
-    if (error instanceof CustomError) {
-      return NextResponse.json({ message: error.message }, { status: error.code as number || 500 });
-    }
-    return NextResponse.json({ message: error.message || "Failed to unlike house" }, { status: 500 });
+    return sendErrorResponse(error, FAILED_TO_UNLIKE_HOUSE);
   }
 }
