@@ -38,7 +38,7 @@ class AIHouseRepository {
   }
 
   static async updateMany(ids: string[], data: Partial<AIHouse>) {
-    return Model.updateMany({ _id: { $in: ids } }, { $set: data }, { new: true }).lean();
+    return Model.updateMany({ _id: { $in: ids } }, { $set: data }).lean();
   }
 
   static async delete(id: string) {

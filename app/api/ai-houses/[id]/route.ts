@@ -10,7 +10,14 @@ import { AI_HOUSE_UPDATE_INVALID_DATA_ERR } from "@/shared/features/error/domain
 export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
-    const house = await AIHouseService.getById(id);
+    const isURL = request.nextUrl.searchParams.get("isURL") === "true";
+    let house = null;
+    if (isURL) {
+      house = await AIHouseService.getByUrl(id);
+    } else {
+      house = await AIHouseService.getById(id);
+    }
+
     if (!house) {
       return NextResponse.json({ message: "House not found" }, { status: 404 });
     }

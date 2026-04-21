@@ -33,6 +33,7 @@ const aiHouseSchema = new Schema<IAIHouse>({
   rating: { type: Number },
   metadata: { type: Schema.Types.Mixed },
   likes: [{ type: String }],
+  url: { type: String, required: true, unique: true },
 }, { timestamps: true });
 
 const fn = async () => {

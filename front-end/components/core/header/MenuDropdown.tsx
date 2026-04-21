@@ -50,7 +50,9 @@ const MenuDropdown = () => {
               data-pc-section="icon"
             />
             <span data-pc-section="label">Sign Out</span>
-            {isLoading && <Spinner color="primary" className="ml-2" />}
+            {isLoading && (
+              <Spinner color="var(--color-primary-900)" className="ml-2" />
+            )}
           </a>
         );
       },

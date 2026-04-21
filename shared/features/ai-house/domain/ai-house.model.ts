@@ -27,12 +27,13 @@ export interface AIHouse {
   createdAt: Date;
   updatedAt: Date;
   likes?: string[];
+  url: string;
 }
 
 export type KeysFromAIHouse<Fields extends keyof AIHouse, Extra = object> =
   Pick<AIHouse, Fields> & Extra;
 
-export type AIHouseBasic = Pick<AIHouse, '_id' | 'name' | 'address' | 'price' | 'rooms' | 'area' | 'images' | 'rating' | 'available'>;
+export type AIHouseBasic = Pick<AIHouse, '_id' | 'name' | 'address' | 'price' | 'rooms' | 'area' | 'images' | 'rating' | 'available' | 'url'>;
 
 export type AIHouseCreate = Omit<AIHouse, '_id' | 'createdAt' | 'updatedAt' | 'rating' | 'likes'> & { ownerId: string };
 export type AIHouseUpdate = Omit<AIHouse, 'createdAt' | 'updatedAt' | 'rating' | 'likes'> & { ownerId: string };

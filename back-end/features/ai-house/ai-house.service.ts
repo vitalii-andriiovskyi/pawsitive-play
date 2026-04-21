@@ -123,6 +123,14 @@ class AIHouseService {
     }
     return convertObjectIds(house);
   }
+
+  static async getByUrl(url: string): Promise<AIHouse | null> {
+    const house = await AIHouseRepository.getByUrl(url);
+    if (!house) {
+      return null;
+    }
+    return convertObjectIds(house);
+  }
 }
 
 export default AIHouseService;
